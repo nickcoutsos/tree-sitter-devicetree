@@ -517,6 +517,36 @@
     }
   },
   {
+    "type": "labeled_node",
+    "named": true,
+    "fields": {
+      "item": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "labeled_node",
+            "named": true
+          },
+          {
+            "type": "node",
+            "named": true
+          }
+        ]
+      },
+      "label": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "memory_reservation",
     "named": true,
     "fields": {},

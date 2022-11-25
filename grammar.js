@@ -46,7 +46,7 @@ module.exports = grammar({
 			choice(
 				$.file_version,
 				$.memory_reservation,
-				alias($.labeled_node, $.labeled_item),
+				$.labeled_item,
 				$.node,
 				$.dtsi_include,
 				$.preproc_include,
@@ -108,13 +108,13 @@ module.exports = grammar({
 			),
 
 		labeled_node: ($) =>
-			seq(field('label', $.label_identifier), ':', field('item', $.node)),
+			seq(field('label', $.label_identifier), ':', field('item', choice($.labeled_node, $.node))),
 
 		labeled_item: ($) =>
 			seq(
 				field('label', $.label_identifier),
 				':',
-				field('item', choice($.node, $.property))
+				field('item', choice($.labeled_item, $.node, $.property))
 			),
 
 		node: ($) =>

@@ -20,13 +20,8 @@
           "name": "memory_reservation"
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "labeled_node"
-          },
-          "named": true,
-          "value": "labeled_item"
+          "type": "SYMBOL",
+          "name": "labeled_item"
         },
         {
           "type": "SYMBOL",
@@ -298,8 +293,17 @@
           "type": "FIELD",
           "name": "item",
           "content": {
-            "type": "SYMBOL",
-            "name": "node"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "labeled_node"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "node"
+              }
+            ]
           }
         }
       ]
@@ -325,6 +329,10 @@
           "content": {
             "type": "CHOICE",
             "members": [
+              {
+                "type": "SYMBOL",
+                "name": "labeled_item"
+              },
               {
                 "type": "SYMBOL",
                 "name": "node"

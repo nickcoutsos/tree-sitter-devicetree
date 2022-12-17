@@ -24,16 +24,10 @@ foo: bar: baz: qux: node {};
 (document
     (labeled_item
         label: (identifier)
-        item: (labeled_item
-            label: (identifier)
-            item: (labeled_item
-                label: (identifier)
-                item: (labeled_item
-                    label: (identifier)
-                    item: (node name: (identifier))
-                )
-            )
-        )
+        label: (identifier)
+        label: (identifier)
+        label: (identifier)
+        item: (node name: (identifier))
     )
 )
 

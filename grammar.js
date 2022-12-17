@@ -108,13 +108,25 @@ module.exports = grammar({
 			),
 
 		labeled_node: ($) =>
-			seq(field('label', $.label_identifier), ':', field('item', choice($.labeled_node, $.node))),
+			seq(
+				repeat1(
+					seq(
+						field('label', $.label_identifier),
+						':'
+					)
+				),
+				field('item', choice($.node))
+			),
 
 		labeled_item: ($) =>
 			seq(
-				field('label', $.label_identifier),
-				':',
-				field('item', choice($.labeled_item, $.node, $.property))
+				repeat1(
+					seq(
+						field('label', $.label_identifier),
+						':'
+					)
+				),
+				field('item', choice($.node, $.property))
 			),
 
 		node: ($) =>

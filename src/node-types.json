@@ -491,10 +491,6 @@
         "required": true,
         "types": [
           {
-            "type": "labeled_item",
-            "named": true
-          },
-          {
             "type": "node",
             "named": true
           },
@@ -505,37 +501,7 @@
         ]
       },
       "label": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "labeled_node",
-    "named": true,
-    "fields": {
-      "item": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "labeled_node",
-            "named": true
-          },
-          {
-            "type": "node",
-            "named": true
-          }
-        ]
-      },
-      "label": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
